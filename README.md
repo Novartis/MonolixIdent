@@ -4,7 +4,7 @@ To create LLPs and LLWs in NONMEM using PsN, use the following commands
 - *LLP command:* llp run3.mod -clean=3 -thetas=1,2,3,4,5,6,7,8 -omegas=1,2,3
 - *LLW command:* parallel_retries run3.mod -degree=.5 -min_retries=100 -picky 
 
-To create LLPs in Monolix, one can already use the [Rsmlx package](https://www.rdocumentation.org/packages/Rsmlx/versions/1.1.0/topics/confintmlx) with the code below.  
+To create LLPs in Monolix, one can already use the [Rsmlx package](https://www.rdocumentation.org/packages/Rsmlx/versions/1.1.0/topics/confintmlx) in R, with the code below.  
 - *LLP command:* r <- confintmlx(project    = "RsmlxDemo2.mlxtran", method     = "proflike", parameters = c("ka_pop","omega_ka")) 
 
 However, the above code in R is not parallelized and can take a long time to run.  Also, code is not yet available for LLWs in Monolix.  This repository will ultimately contain code for generating Likelihood Profiles (LLPs) and Likelihood Waterfalls (LLWs) in Monolix using R with the MlxConnectors package for calling Monolix and the Batchtools for parallelizing runs.  
